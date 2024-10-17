@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Slab:wght@400;700&display=swap");
+
+body {
+  --gap: 2em;
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  color: #fff;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+/* Navbar styles */
+nav {
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Defines the navbar height */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Slightly darker for better contrast */
+  backdrop-filter: blur(10px);
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10; /* Keeps navbar above everything else */
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+/* Adjusts the layout to account for the fixed navbar */
+#container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 7em; /* Added padding to prevent content overlap */
+  z-index: 1; /* Ensures content is above the 3D canvas */
+}
+
+.hero-panel,
+.content-panel {
+  width: 80%;
+  border-radius: 10px;
+  padding: 2em;
+  margin-bottom: var(--gap);
+}
+
+.hero-panel h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10em;
+  margin-bottom: 0.5em;
+}
+
+.content-panel h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  font-size: 2em;
+}
+
+a {
+  color: #fff;
+}
+
+.content-panel p {
+  color: #e0e0e0;
+}
+
+.hero-panel#footer {
+  margin-bottom: 5em;
+}
+
+canvas {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .hero-panel h1 {
+    font-size: 6em;
+  }
+
+  .content-panel h2 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+
+  /* Adjust container padding for mobile */
+  #container {
+    padding-top: 6em; /* Reducing top padding for smaller screens */
+  }
+
+  .hero-panel,
+  .content-panel {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-panel h1 {
+    font-size: 4em;
+  }
+
+  .content-panel h2 {
+    font-size: 2.5em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  .hamburger div {
+    width: 20px;
+    height: 2px;
+  }
+
+  #container {
+    padding-top: 5em; /* Further reduction for very small screens */
+  }
+
+  .hero-panel,
+  .content-panel {
+    width: 95%;
+  }
+}
